@@ -7,4 +7,4 @@
 
 ## Используются технологии:
 
-* [Ссылка на frontend-часть](https://github.com/Maxxnikitin/cashoff-api).
+* [Ссылка на backend-часть](https://github.com/Maxxnikitin/cashoff-api).
