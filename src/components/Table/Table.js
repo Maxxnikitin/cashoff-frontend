@@ -1,21 +1,17 @@
 import React from 'react';
 import './Table.css';
+import BankCard from '../BankCard/BankCard';
 
 function Table(props) {
   return (
-    <table>
-      <tr>
-        <th>БИК</th>
-        <th>Название</th>
-        <th>Корсчёт</th>
-        <th>Адрес</th>
+    <table className='table'>
+      <tr className='table__headers'>
+        <th className='table__header'>БИК</th>
+        <th className='table__header'>Название</th>
+        <th className='table__header'>Корсчёт</th>
+        <th className='table__header'>Адрес</th>
       </tr>
-      <tr>
-        <td>{props.bank.bik}</td>
-        <td>{props.bank.name}</td>
-        <td>{props.bank.corrAccount}</td>
-        <td>{props.bank.address}</td>
-      </tr>
+      <BankCard />
     </table>
   )
 }
