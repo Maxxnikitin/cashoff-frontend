@@ -3,7 +3,7 @@ import './FormButton.css';
 
 function FormButton(props) {
   return (
-    <button className='form-button' type='submit'>Сохранить</button>
+    <button className='form-button' type='submit' onClick={props.onClick}>{props.buttonText}</button>
   )
 }
 

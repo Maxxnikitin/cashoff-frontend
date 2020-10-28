@@ -9,9 +9,11 @@ function Input(props) {
       type='text'
       placeholder={props.placeholder}
       name={props.name}
-      minLength='2'
-      maxLength='30'
+      minLength={props.minLength}
+      maxLength={props.maxLength}
       required
+      value={props.value}
+      onChange={props.onChange}
     />
   )
 }

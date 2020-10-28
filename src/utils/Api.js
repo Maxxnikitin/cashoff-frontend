@@ -1,6 +1,6 @@
 export const date = {
-  baseUrl: 'localhost:4000',
   headers: {
+    baseUrl: 'http://localhost:4000/',
     'Content-Type': 'application/json'
   },
 };
@@ -19,14 +19,14 @@ class Api {
   }
 
   getAllBanks() {
-    return fetch(`${this.baseUrl}`, {
+    return fetch('http://localhost:4000', {
       headers: this.headers,
     })
     .then(callbackWithRes)
   }
 
   setBankInfo(bik, name, corrAccount, address) {
-    return fetch(`${this.baseUrl}`, {
+    return fetch('http://localhost:4000/add', {
       method: 'PATCH',
       headers: this.headers,
       body: JSON.stringify({ bik, name, corrAccount, address }),
@@ -35,7 +35,7 @@ class Api {
   }
 
   addNewBank(bik, name, corrAccount, address) {
-    return fetch(`${this.baseUrl}/add`, {
+    return fetch('http://localhost:4000/add', {
       method: 'POST',
       headers: this.headers,
       body: JSON.stringify({ bik, name, corrAccount, address }),
