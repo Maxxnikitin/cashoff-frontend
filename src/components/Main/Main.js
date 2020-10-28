@@ -36,16 +36,10 @@ function Main(props) {
 
   function handleUpdateBankSubmit(date) {
     api.setBankInfo(date.bik, date.name, date.corrAccount, date.address)
-      .then((newBank) => {
-        // чтобы сразу добавить обновлённый банк в список, нужно удалить из него его прошлую версию, иначе будут два банка с одинаковым ключом. Для этого находим _id объекта, который меняем
-        const id = newBank._id;
-        // по этому _id находим объект в списке
-        const exBank = banks.find(x => x._id === id);
-        // и вырезаем его
-        banks.splice(banks.indexOf(exBank), 1);
-        // обновляем стейт
-        setBanksForRender([...banksForRender, newBank]);
-      })
+    .then((newBank) => {
+      const update = banks.map((b) => (b._id === newBank._id) ? newBank : b);
+      setBanksForRender(update);
+    })
       .catch((err) => {
         console.log(err);
       })
