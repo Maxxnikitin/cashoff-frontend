@@ -1,0 +1,12 @@
+.page {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.page__title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 133%;
+  text-align: center;
+}
